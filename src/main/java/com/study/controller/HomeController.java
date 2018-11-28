@@ -62,6 +62,11 @@ public class HomeController {
         return "resources/resources";
     }
 
+    @RequestMapping("/scenicPage")
+    public String scenicPage(){
+        return "scenic/scenic";
+    }
+
     @RequestMapping("/403")
     public String forbidden(){
         return "403";
