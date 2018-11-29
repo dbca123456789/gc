@@ -62,7 +62,7 @@ public class HomeController {
         return "resources/resources";
     }
 
-    @RequestMapping("/scenicPage")
+    @RequestMapping("/scenicsPage")
     public String scenicPage(){
         return "scenic/scenic";
     }

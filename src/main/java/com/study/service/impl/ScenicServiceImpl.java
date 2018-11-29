@@ -23,5 +23,10 @@ public class ScenicServiceImpl extends BaseService<Scenic> implements ScenicServ
         return new PageInfo<>(scenicList);
     }
 
+    @Override
+    public void delScenic(Integer scenicid) {
+        mapper.deleteByPrimaryKey(scenicid);
+    }
+
 
 }

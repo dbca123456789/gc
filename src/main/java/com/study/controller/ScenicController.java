@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.study.model.Role;
 import com.study.model.Scenic;
 import com.study.service.ScenicService;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,28 @@ public class ScenicController {
         map.put("recordsFiltered",pageInfo.getTotal());
         map.put("data", pageInfo.getList());
         return map;
+    }
+
+    @RequestMapping(value = "/delete")
+    public String delete(Integer id){
+        try{
+            scenicService.delScenic(id);
+            return "success";
+        }catch (Exception e){
+            e.printStackTrace();
+            return "fail";
+        }
+    }
+
+    @RequestMapping(value = "/add")
+    public String add(Scenic scenic) {
+        try {
+            scenicService.save(scenic);
+            return "success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "fail";
+        }
     }
 
 }
